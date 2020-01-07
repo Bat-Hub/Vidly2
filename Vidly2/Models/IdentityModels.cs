@@ -22,6 +22,8 @@ namespace Vidly2.Models
     {
         public DbSet<Movie> Movies { get; set; }// My domain models
         public DbSet<Genre> Genre { get; set; }// My domain models
+        public DbSet<MembershipType> MembershipType { get; set; }// My domain models
+        public DbSet<Customer> Customer { get; set; }// My domain models
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

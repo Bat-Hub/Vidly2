@@ -1,0 +1,29 @@
+﻿@model List<Vidly2.Models.Customer>
+
+
+<h2>Index</h2>
+<table class="table table-bordered table-hover table-responsive">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>MembershipType</td>
+            <td>Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>
+                   @customer.Name
+                </td>
+                <td>
+                    @customer.MembershipType.Name
+                </td>
+                <td>
+                    <button class="btn-link">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
