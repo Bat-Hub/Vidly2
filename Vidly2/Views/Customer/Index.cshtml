@@ -2,6 +2,7 @@
 
 
 <h2>Index</h2>
+@Html.ActionLink("New Customer", "CustomerForm", "Customer", new { @class = "btn btn-primary" })
 <table class="table table-bordered table-hover table-responsive">
     <thead>
         <tr>
@@ -15,10 +16,11 @@
         {
             <tr>
                 <td>
-                   @customer.Name
+                    @Html.ActionLink(customer.Name, "Edit", "Customer", new { id = customer.Id }, customer.Id)
                 </td>
                 <td>
                     @customer.MembershipType.Name
+
                 </td>
                 <td>
                     <button class="btn-link">Delete</button>

@@ -3,13 +3,43 @@
     ViewBag.Title = "CustomerForm";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>MovieForm</h2>
+@if (Model.Customer.Id != 0)
+{
+    <h2>Edit</h2>
+}
+else
+{
+    <h2>New</h2>
+}
 
 @using (Html.BeginForm("Save", "Customer"))
 {
+    @Html.ValidationSummary(false, "FIx below errors")
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Name)
         @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.Name)
     </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.Birthdate)
+        @Html.TextBoxFor(m => m.Customer.Birthdate, "{0:d MMM yyyy}", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.MembershipTypeId)
+        @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Types", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.MembershipTypeId)
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsletter) Is Subscibed?
+        </label>
+    </div>
+    @Html.HiddenFor(m => m.Customer.Id)
+    <div class="form-group">
+        <button class="btn btn-primary">Save</button>
+        @Html.ActionLink("Cancel", "Index", "Customer", new { @class = "btn btn-primary" })
+    </div>
+}
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
 }

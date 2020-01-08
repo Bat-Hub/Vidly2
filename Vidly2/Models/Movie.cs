@@ -23,6 +23,7 @@ namespace Vidly2.Models
         public DateTime DateAdded { get; set; }
 
         [Display(Name = "Release Date")]
+        [DisplayFormat(DataFormatString = "{0:d}")]
         [Required]
         public DateTime ReleaseDate { get; set; }
 
