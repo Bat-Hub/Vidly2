@@ -203,6 +203,10 @@
     <Compile Include="Migrations\202001071131162_customer.Designer.cs">
       <DependentUpon>202001071131162_customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001091259227_addrole.cs" />
+    <Compile Include="Migrations\202001091259227_addrole.Designer.cs">
+      <DependentUpon>202001091259227_addrole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -211,6 +215,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Models\ViewDataModel\CustomerViewDataModel.cs" />
     <Compile Include="Models\ViewDataModel\MovieViewDataModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -454,6 +459,7 @@
     <Content Include="Views\Customer\CustomerForm.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
+    <Content Include="Views\Movies\ReadOnlyIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -477,6 +483,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001071131162_customer.resx">
       <DependentUpon>202001071131162_customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001091259227_addrole.resx">
+      <DependentUpon>202001091259227_addrole.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

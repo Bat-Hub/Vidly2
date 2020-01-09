@@ -24,11 +24,9 @@ namespace Vidly2.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            var customer = _context.Customer.Include(c => c.MembershipType).
-                ToList();
-            return View(customer);
+            return View();
         }
-
+        [Authorize]
         public ActionResult CustomerForm()
         {
             var customerdatamodel = new CustomerViewDataModel()
