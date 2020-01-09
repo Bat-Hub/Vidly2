@@ -207,6 +207,10 @@
     <Compile Include="Migrations\202001091259227_addrole.Designer.cs">
       <DependentUpon>202001091259227_addrole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001091409436_addphonelicence.cs" />
+    <Compile Include="Migrations\202001091409436_addphonelicence.Designer.cs">
+      <DependentUpon>202001091409436_addphonelicence.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -486,6 +490,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001091259227_addrole.resx">
       <DependentUpon>202001091259227_addrole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001091409436_addphonelicence.resx">
+      <DependentUpon>202001091409436_addphonelicence.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

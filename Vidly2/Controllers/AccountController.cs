@@ -152,11 +152,17 @@ namespace Vidly2.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    DrivingLicence = model.DrivingLicence,
+                    Phone = model.Phone
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    
+
 
                     //var rolestore = new RoleStore<IdentityRole>(new ApplicationDbContext());
                     //var rolemanager = new RoleManager<IdentityRole>(rolestore);
