@@ -19,10 +19,7 @@ namespace Vidly2.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            _context.Dispose();
-        }
+
         public IHttpActionResult GetCustomers()
         {
             var customerdto = _context.Customer.Include(c => c.MembershipType)
@@ -34,13 +31,14 @@ namespace Vidly2.Controllers.Api
         public IHttpActionResult GetCustomer(int id)
         {
             var custindb = _context.Customer.SingleOrDefault(c => c.Id == id);
-            if(custindb==null)
+            if (custindb == null)
                 return NotFound();
 
             var customerdto = Mapper.Map<Customer, CustomerDto>(custindb);
             return Ok(customerdto);
         }
 
+        [HttpPost]
         public IHttpActionResult CreateCustomer(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
@@ -48,8 +46,35 @@ namespace Vidly2.Controllers.Api
             var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
             _context.Customer.Add(customer);
             _context.SaveChanges();
-            //customerDto.
-            return Created(new Uri(Request.RequestUri + "/" + movie.Id), movie);
+            customerDto.Id = customer.Id;
+            return Created(new Uri(Request.RequestUri + "/" + customer.Id), customerDto);
+        }
+
+        [HttpPut]
+        public IHttpActionResult UpdateCustomer(CustomerDto customerDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var customerindb = _context.Customer.SingleOrDefault(c => c.Id == customerDto.Id);
+            if (customerindb == null)
+                return NotFound();
+            Mapper.Map<CustomerDto, Customer>(customerDto, customerindb);
+            _context.SaveChanges();
+            return Ok();
+        }
+
+        [HttpDelete]
+        public IHttpActionResult DeleteCustomer(int id)
+        {
+
+            var customerindb = _context.Customer.SingleOrDefault(c => c.Id == id);
+            if (customerindb == null)
+                return NotFound();
+            _context.Customer.Remove(customerindb);
+            _context.SaveChanges();
+            return Ok();
+
         }
     }
 }

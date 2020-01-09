@@ -18,6 +18,7 @@ namespace Vidly2.Dto
         [Display(Name = "Genre")]
         [Required(ErrorMessage = "Select Genre")]
         public byte GenreId { get; set; }
+        public GenreDto Genre { get; set; }
 
         public DateTime DateAdded { get; set; }
 
