@@ -32,6 +32,7 @@ namespace Vidly2.Models
         public DbSet<MembershipType> MembershipType { get; set; }// My domain models
         public DbSet<Customer> Customer { get; set; }// My domain models
 
+        public DbSet<Rental> Rental { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
