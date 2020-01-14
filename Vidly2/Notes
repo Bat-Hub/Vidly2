@@ -129,3 +129,39 @@ perfomence optimization
 
 3)Client
 	bundling js
+
+
+	Build expense plan
+
+Menu=> income , expense, month plan
+
+home page
+By Category/expense name
+ dashboard
+	balance in each expense 
+ expense graph
+    month expense raph in each category    
+ weekly chart/report
+   compare each week expense
+ yealry chart
+	monthly high/low pie chart
+
+Income
+ amount
+ source=> dropdown
+ Date
+ 
+Expense
+ amount
+ where?
+ category=> dropdown=> abilty to add new category
+ dropdown from monthly plan(should reduce in plan)
+
+Month Plan
+ amount, purpose, category(dropdown), total, balnce, salary , other balance
+
+
+
+Models
+Category=> Name, id
+Month plan=> id, amount, category, Purpose,
