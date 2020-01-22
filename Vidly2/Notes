@@ -165,3 +165,21 @@ Month Plan
 Models
 Category=> Name, id
 Month plan=> id, amount, category, Purpose,
+
+
+Design patterns
+Art of designing resuable software
+Resuable maintanable software 
+Gang of four
+23 patters
+Creational	=> different ways to create objects
+Structural	=> relationships of objects
+Behaviour	=> interaction/communication of objects
+
+
+constructors: is a method of a class, called when creating new instance for the class 
+Coupling: class depending on another class, including main class, also need to recompile when changed inside a class(tightly coupled)
+
+(for losely)
+interfaces:
+
